@@ -1,5 +1,6 @@
 import { IFeatures } from 'app/shared/model/features.model';
 import { IElement } from 'app/shared/model/element.model';
+import { INetKeyIndex } from 'app/shared/model/net-key-index.model';
 import { IKeyIndex } from 'app/shared/model/key-index.model';
 import { INetworkConfiguration } from 'app/shared/model/network-configuration.model';
 
@@ -19,7 +20,7 @@ export interface INode {
   pid?: string;
   features?: IFeatures;
   elements?: IElement[];
-  netKeys?: IKeyIndex[];
+  netKeys?: INetKeyIndex[];
   appKeys?: IKeyIndex[];
   networkConfiguration?: INetworkConfiguration;
 }
@@ -41,7 +42,7 @@ export class Node implements INode {
     public pid?: string,
     public features?: IFeatures,
     public elements?: IElement[],
-    public netKeys?: IKeyIndex[],
+    public netKeys?: INetKeyIndex[],
     public appKeys?: IKeyIndex[],
     public networkConfiguration?: INetworkConfiguration
   ) {

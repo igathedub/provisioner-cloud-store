@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.allocatedGroupRange.home.title">Allocated Group Ranges</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-allocated-group-range" [routerLink]="['/allocated-group-range/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.allocatedGroupRange.home.createLabel">
+            Create a new Allocated Group Range
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="allocatedGroupRanges?.length === 0">
+        <span jhiTranslate="provisionercloudApp.allocatedGroupRange.home.notFound">No allocatedGroupRanges found</span>
+    </div>
+    <div class="table-responsive" *ngIf="allocatedGroupRanges?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lowAddress"><span jhiTranslate="provisionercloudApp.allocatedGroupRange.lowAddress">Low Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="highAddress"><span jhiTranslate="provisionercloudApp.allocatedGroupRange.highAddress">High Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="provisioner.id"><span jhiTranslate="provisionercloudApp.allocatedGroupRange.provisioner">Provisioner</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let allocatedGroupRange of allocatedGroupRanges ;trackBy: trackId">
+                <td><a [routerLink]="['/allocated-group-range', allocatedGroupRange.id, 'view' ]">{{allocatedGroupRange.id}}</a></td>
+                <td>{{allocatedGroupRange.lowAddress}}</td>
+                <td>{{allocatedGroupRange.highAddress}}</td>
+                <td>
+                    <div *ngIf="allocatedGroupRange.provisioner">
+                        <a [routerLink]="['/provisioner', allocatedGroupRange.provisioner?.id, 'view' ]" >{{allocatedGroupRange.provisioner?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/allocated-group-range', allocatedGroupRange.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/allocated-group-range', allocatedGroupRange.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/allocated-group-range', { outlets: { popup: allocatedGroupRange.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -22,7 +22,6 @@
             <th scope="col"  jhiSortBy="index"><span jhiTranslate="provisionercloudApp.keyIndex.index">Index</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="updated"><span jhiTranslate="provisionercloudApp.keyIndex.updated">Updated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="node.id"><span jhiTranslate="provisionercloudApp.keyIndex.node">Node</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th scope="col"  jhiSortBy="node.id"><span jhiTranslate="provisionercloudApp.keyIndex.node">Node</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -31,11 +30,6 @@
                 <td><a [routerLink]="['/key-index', keyIndex.id, 'view' ]">{{keyIndex.id}}</a></td>
                 <td>{{keyIndex.index}}</td>
                 <td>{{keyIndex.updated}}</td>
-                <td>
-                    <div *ngIf="keyIndex.node">
-                        <a [routerLink]="['/node', keyIndex.node?.id, 'view' ]" >{{keyIndex.node?.id}}</a>
-                    </div>
-                </td>
                 <td>
                     <div *ngIf="keyIndex.node">
                         <a [routerLink]="['/node', keyIndex.node?.id, 'view' ]" >{{keyIndex.node?.id}}</a>

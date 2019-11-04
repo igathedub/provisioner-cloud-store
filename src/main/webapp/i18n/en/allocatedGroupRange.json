@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "allocatedGroupRange": {
+      "home": {
+        "title": "Allocated Group Ranges",
+        "createLabel": "Create a new Allocated Group Range",
+        "createOrEditLabel": "Create or edit a Allocated Group Range",
+        "notFound": "No Allocated Group Ranges found"
+      },
+      "created": "A new Allocated Group Range is created with identifier {{ param }}",
+      "updated": "A Allocated Group Range is updated with identifier {{ param }}",
+      "deleted": "A Allocated Group Range is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Allocated Group Range {{ id }}?"
+      },
+      "detail": {
+        "title": "Allocated Group Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner"
+    }
+  }
+}

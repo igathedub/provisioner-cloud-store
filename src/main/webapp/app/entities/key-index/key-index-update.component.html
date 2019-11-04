@@ -27,13 +27,6 @@
                         <option [ngValue]="nodeOption.id === editForm.get('node').value?.id ? editForm.get('node').value : nodeOption" *ngFor="let nodeOption of nodes; trackBy: trackNodeById">{{nodeOption.id}}</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="provisionercloudApp.keyIndex.node" for="field_node">Node</label>
-                    <select class="form-control" id="field_node" name="node" formControlName="node">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="nodeOption.id === editForm.get('node').value?.id ? editForm.get('node').value : nodeOption" *ngFor="let nodeOption of nodes; trackBy: trackNodeById">{{nodeOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="allocatedUnicastRange">
+            <h2><span jhiTranslate="provisionercloudApp.allocatedUnicastRange.detail.title">Allocated Unicast Range</span> {{allocatedUnicastRange.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.allocatedUnicastRange.lowAddress">Low Address</span></dt>
+                <dd>
+                    <span>{{allocatedUnicastRange.lowAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.allocatedUnicastRange.highAddress">High Address</span></dt>
+                <dd>
+                    <span>{{allocatedUnicastRange.highAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.allocatedUnicastRange.provisioner">Provisioner</span></dt>
+                <dd>
+                    <div *ngIf="allocatedUnicastRange.provisioner">
+                        <a [routerLink]="['/provisioner', allocatedUnicastRange.provisioner?.id, 'view']">{{allocatedUnicastRange.provisioner?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/allocated-unicast-range', allocatedUnicastRange.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -13,19 +13,19 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "allocatedRange",
+            "otherEntityName": "allocatedGroupRange",
             "otherEntityRelationshipName": "provisioner",
             "relationshipName": "aallocatedGroupRange"
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "allocatedRange",
+            "otherEntityName": "allocatedUnicastRange",
             "otherEntityRelationshipName": "provisioner",
             "relationshipName": "aallocatedUnicastRange"
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "allocatedRange",
+            "otherEntityName": "allocatedSceneRange",
             "otherEntityRelationshipName": "provisioner",
             "relationshipName": "aallocatedSceneRange"
         },

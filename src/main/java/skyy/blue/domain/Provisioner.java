@@ -32,15 +32,15 @@ public class Provisioner implements Serializable {
 
     @OneToMany(mappedBy = "provisioner")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AllocatedRange> aallocatedGroupRanges = new HashSet<>();
+    private Set<AllocatedGroupRange> aallocatedGroupRanges = new HashSet<>();
 
     @OneToMany(mappedBy = "provisioner")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AllocatedRange> aallocatedUnicastRanges = new HashSet<>();
+    private Set<AllocatedUnicastRange> aallocatedUnicastRanges = new HashSet<>();
 
     @OneToMany(mappedBy = "provisioner")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AllocatedRange> aallocatedSceneRanges = new HashSet<>();
+    private Set<AllocatedSceneRange> aallocatedSceneRanges = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("provisioners")
@@ -81,79 +81,79 @@ public class Provisioner implements Serializable {
         this.provisionerName = provisionerName;
     }
 
-    public Set<AllocatedRange> getAallocatedGroupRanges() {
+    public Set<AllocatedGroupRange> getAallocatedGroupRanges() {
         return aallocatedGroupRanges;
     }
 
-    public Provisioner aallocatedGroupRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedGroupRanges = allocatedRanges;
+    public Provisioner aallocatedGroupRanges(Set<AllocatedGroupRange> allocatedGroupRanges) {
+        this.aallocatedGroupRanges = allocatedGroupRanges;
         return this;
     }
 
-    public Provisioner addAallocatedGroupRange(AllocatedRange allocatedRange) {
-        this.aallocatedGroupRanges.add(allocatedRange);
-        allocatedRange.setProvisioner(this);
+    public Provisioner addAallocatedGroupRange(AllocatedGroupRange allocatedGroupRange) {
+        this.aallocatedGroupRanges.add(allocatedGroupRange);
+        allocatedGroupRange.setProvisioner(this);
         return this;
     }
 
-    public Provisioner removeAallocatedGroupRange(AllocatedRange allocatedRange) {
-        this.aallocatedGroupRanges.remove(allocatedRange);
-        allocatedRange.setProvisioner(null);
+    public Provisioner removeAallocatedGroupRange(AllocatedGroupRange allocatedGroupRange) {
+        this.aallocatedGroupRanges.remove(allocatedGroupRange);
+        allocatedGroupRange.setProvisioner(null);
         return this;
     }
 
-    public void setAallocatedGroupRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedGroupRanges = allocatedRanges;
+    public void setAallocatedGroupRanges(Set<AllocatedGroupRange> allocatedGroupRanges) {
+        this.aallocatedGroupRanges = allocatedGroupRanges;
     }
 
-    public Set<AllocatedRange> getAallocatedUnicastRanges() {
+    public Set<AllocatedUnicastRange> getAallocatedUnicastRanges() {
         return aallocatedUnicastRanges;
     }
 
-    public Provisioner aallocatedUnicastRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedUnicastRanges = allocatedRanges;
+    public Provisioner aallocatedUnicastRanges(Set<AllocatedUnicastRange> allocatedUnicastRanges) {
+        this.aallocatedUnicastRanges = allocatedUnicastRanges;
         return this;
     }
 
-    public Provisioner addAallocatedUnicastRange(AllocatedRange allocatedRange) {
-        this.aallocatedUnicastRanges.add(allocatedRange);
-        allocatedRange.setProvisioner(this);
+    public Provisioner addAallocatedUnicastRange(AllocatedUnicastRange allocatedUnicastRange) {
+        this.aallocatedUnicastRanges.add(allocatedUnicastRange);
+        allocatedUnicastRange.setProvisioner(this);
         return this;
     }
 
-    public Provisioner removeAallocatedUnicastRange(AllocatedRange allocatedRange) {
-        this.aallocatedUnicastRanges.remove(allocatedRange);
-        allocatedRange.setProvisioner(null);
+    public Provisioner removeAallocatedUnicastRange(AllocatedUnicastRange allocatedUnicastRange) {
+        this.aallocatedUnicastRanges.remove(allocatedUnicastRange);
+        allocatedUnicastRange.setProvisioner(null);
         return this;
     }
 
-    public void setAallocatedUnicastRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedUnicastRanges = allocatedRanges;
+    public void setAallocatedUnicastRanges(Set<AllocatedUnicastRange> allocatedUnicastRanges) {
+        this.aallocatedUnicastRanges = allocatedUnicastRanges;
     }
 
-    public Set<AllocatedRange> getAallocatedSceneRanges() {
+    public Set<AllocatedSceneRange> getAallocatedSceneRanges() {
         return aallocatedSceneRanges;
     }
 
-    public Provisioner aallocatedSceneRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedSceneRanges = allocatedRanges;
+    public Provisioner aallocatedSceneRanges(Set<AllocatedSceneRange> allocatedSceneRanges) {
+        this.aallocatedSceneRanges = allocatedSceneRanges;
         return this;
     }
 
-    public Provisioner addAallocatedSceneRange(AllocatedRange allocatedRange) {
-        this.aallocatedSceneRanges.add(allocatedRange);
-        allocatedRange.setProvisioner(this);
+    public Provisioner addAallocatedSceneRange(AllocatedSceneRange allocatedSceneRange) {
+        this.aallocatedSceneRanges.add(allocatedSceneRange);
+        allocatedSceneRange.setProvisioner(this);
         return this;
     }
 
-    public Provisioner removeAallocatedSceneRange(AllocatedRange allocatedRange) {
-        this.aallocatedSceneRanges.remove(allocatedRange);
-        allocatedRange.setProvisioner(null);
+    public Provisioner removeAallocatedSceneRange(AllocatedSceneRange allocatedSceneRange) {
+        this.aallocatedSceneRanges.remove(allocatedSceneRange);
+        allocatedSceneRange.setProvisioner(null);
         return this;
     }
 
-    public void setAallocatedSceneRanges(Set<AllocatedRange> allocatedRanges) {
-        this.aallocatedSceneRanges = allocatedRanges;
+    public void setAallocatedSceneRanges(Set<AllocatedSceneRange> allocatedSceneRanges) {
+        this.aallocatedSceneRanges = allocatedSceneRanges;
     }
 
     public NetworkConfiguration getNetworkConfiguration() {

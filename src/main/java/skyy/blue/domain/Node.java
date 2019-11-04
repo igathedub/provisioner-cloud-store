@@ -70,7 +70,7 @@ public class Node implements Serializable {
 
     @OneToMany(mappedBy = "node")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<KeyIndex> netKeys = new HashSet<>();
+    private Set<NetKeyIndex> netKeys = new HashSet<>();
 
     @OneToMany(mappedBy = "node")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -283,29 +283,29 @@ public class Node implements Serializable {
         this.elements = elements;
     }
 
-    public Set<KeyIndex> getNetKeys() {
+    public Set<NetKeyIndex> getNetKeys() {
         return netKeys;
     }
 
-    public Node netKeys(Set<KeyIndex> keyIndices) {
-        this.netKeys = keyIndices;
+    public Node netKeys(Set<NetKeyIndex> netKeyIndices) {
+        this.netKeys = netKeyIndices;
         return this;
     }
 
-    public Node addNetKey(KeyIndex keyIndex) {
-        this.netKeys.add(keyIndex);
-        keyIndex.setNode(this);
+    public Node addNetKey(NetKeyIndex netKeyIndex) {
+        this.netKeys.add(netKeyIndex);
+        netKeyIndex.setNode(this);
         return this;
     }
 
-    public Node removeNetKey(KeyIndex keyIndex) {
-        this.netKeys.remove(keyIndex);
-        keyIndex.setNode(null);
+    public Node removeNetKey(NetKeyIndex netKeyIndex) {
+        this.netKeys.remove(netKeyIndex);
+        netKeyIndex.setNode(null);
         return this;
     }
 
-    public void setNetKeys(Set<KeyIndex> keyIndices) {
-        this.netKeys = keyIndices;
+    public void setNetKeys(Set<NetKeyIndex> netKeyIndices) {
+        this.netKeys = netKeyIndices;
     }
 
     public Set<KeyIndex> getAppKeys() {

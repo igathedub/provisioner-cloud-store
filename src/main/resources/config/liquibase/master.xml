@@ -31,6 +31,10 @@
     <include file="config/liquibase/changelog/20191104224055_added_entity_Node.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224056_added_entity_Provisioner.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224057_added_entity_NetworkConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234519_added_entity_NetKeyIndex.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234525_added_entity_AllocatedGroupRange.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234526_added_entity_AllocatedUnicastRange.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234527_added_entity_AllocatedSceneRange.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20191104224042_added_entity_constraints_AppUser.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224043_added_entity_constraints_Facility.xml" relativeToChangelogFile="false"/>
@@ -46,5 +50,9 @@
     <include file="config/liquibase/changelog/20191104224055_added_entity_constraints_Node.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224056_added_entity_constraints_Provisioner.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224057_added_entity_constraints_NetworkConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234519_added_entity_constraints_NetKeyIndex.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234525_added_entity_constraints_AllocatedGroupRange.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234526_added_entity_constraints_AllocatedUnicastRange.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191104234527_added_entity_constraints_AllocatedSceneRange.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

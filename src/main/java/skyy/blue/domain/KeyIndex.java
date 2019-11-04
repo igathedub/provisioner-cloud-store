@@ -32,10 +32,6 @@ public class KeyIndex implements Serializable {
     @JsonIgnoreProperties("keyIndices")
     private Node node;
 
-    @ManyToOne
-    @JsonIgnoreProperties("keyIndices")
-    private Node node;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -69,19 +65,6 @@ public class KeyIndex implements Serializable {
 
     public void setUpdated(Boolean updated) {
         this.updated = updated;
-    }
-
-    public Node getNode() {
-        return node;
-    }
-
-    public KeyIndex node(Node node) {
-        this.node = node;
-        return this;
-    }
-
-    public void setNode(Node node) {
-        this.node = node;
     }
 
     public Node getNode() {

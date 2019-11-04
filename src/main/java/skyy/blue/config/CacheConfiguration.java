@@ -75,6 +75,10 @@ public class CacheConfiguration {
             createCache(cm, skyy.blue.domain.NetworkConfiguration.class.getName() + ".groups");
             createCache(cm, skyy.blue.domain.NetworkConfiguration.class.getName() + ".netKeys");
             createCache(cm, skyy.blue.domain.NetworkConfiguration.class.getName() + ".appKeys");
+            createCache(cm, skyy.blue.domain.NetKeyIndex.class.getName());
+            createCache(cm, skyy.blue.domain.AllocatedGroupRange.class.getName());
+            createCache(cm, skyy.blue.domain.AllocatedUnicastRange.class.getName());
+            createCache(cm, skyy.blue.domain.AllocatedSceneRange.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

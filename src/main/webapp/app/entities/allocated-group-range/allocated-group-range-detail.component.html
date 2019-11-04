@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="allocatedGroupRange">
+            <h2><span jhiTranslate="provisionercloudApp.allocatedGroupRange.detail.title">Allocated Group Range</span> {{allocatedGroupRange.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.allocatedGroupRange.lowAddress">Low Address</span></dt>
+                <dd>
+                    <span>{{allocatedGroupRange.lowAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.allocatedGroupRange.highAddress">High Address</span></dt>
+                <dd>
+                    <span>{{allocatedGroupRange.highAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.allocatedGroupRange.provisioner">Provisioner</span></dt>
+                <dd>
+                    <div *ngIf="allocatedGroupRange.provisioner">
+                        <a [routerLink]="['/provisioner', allocatedGroupRange.provisioner?.id, 'view']">{{allocatedGroupRange.provisioner?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/allocated-group-range', allocatedGroupRange.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
