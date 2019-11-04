@@ -1,0 +1,49 @@
+{
+    "name": "Provisioner",
+    "fields": [
+        {
+            "fieldName": "uUID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "provisionerName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "allocatedRange",
+            "otherEntityRelationshipName": "provisioner",
+            "relationshipName": "aallocatedGroupRange"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "allocatedRange",
+            "otherEntityRelationshipName": "provisioner",
+            "relationshipName": "aallocatedUnicastRange"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "allocatedRange",
+            "otherEntityRelationshipName": "provisioner",
+            "relationshipName": "aallocatedSceneRange"
+        },
+        {
+            "relationshipName": "networkConfiguration",
+            "otherEntityName": "networkConfiguration",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224056",
+    "entityTableName": "provisioner",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

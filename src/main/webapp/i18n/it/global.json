@@ -7,6 +7,23 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entità",
+        "customer": "Customer",
+        "appUser": "App User",
+        "facility": "Facility",
+        "role": "Role",
+        "meshGroup": "Mesh Group",
+        "appKey": "App Key",
+        "netKey": "Net Key",
+        "keyIndex": "Key Index",
+        "features": "Features",
+        "retransmit": "Retransmit",
+        "publish": "Publish",
+        "model": "Model",
+        "element": "Element",
+        "allocatedRange": "Allocated Range",
+        "node": "Node",
+        "provisioner": "Provisioner",
+        "networkConfiguration": "Network Configuration",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

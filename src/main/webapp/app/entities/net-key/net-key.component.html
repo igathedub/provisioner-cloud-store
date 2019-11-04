@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.netKey.home.title">Net Keys</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-net-key" [routerLink]="['/net-key/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.netKey.home.createLabel">
+            Create a new Net Key
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="netKeys?.length === 0">
+        <span jhiTranslate="provisionercloudApp.netKey.home.notFound">No netKeys found</span>
+    </div>
+    <div class="table-responsive" *ngIf="netKeys?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="phase"><span jhiTranslate="provisionercloudApp.netKey.phase">Phase</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="minSecurity"><span jhiTranslate="provisionercloudApp.netKey.minSecurity">Min Security</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="key"><span jhiTranslate="provisionercloudApp.netKey.key">Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="timestamp"><span jhiTranslate="provisionercloudApp.netKey.timestamp">Timestamp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="provisionercloudApp.netKey.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="index"><span jhiTranslate="provisionercloudApp.netKey.index">Index</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="networkConfiguration.id"><span jhiTranslate="provisionercloudApp.netKey.networkConfiguration">Network Configuration</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let netKey of netKeys ;trackBy: trackId">
+                <td><a [routerLink]="['/net-key', netKey.id, 'view' ]">{{netKey.id}}</a></td>
+                <td>{{netKey.phase}}</td>
+                <td>{{netKey.minSecurity}}</td>
+                <td>{{netKey.key}}</td>
+                <td>{{netKey.timestamp}}</td>
+                <td>{{netKey.name}}</td>
+                <td>{{netKey.index}}</td>
+                <td>
+                    <div *ngIf="netKey.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', netKey.networkConfiguration?.id, 'view' ]" >{{netKey.networkConfiguration?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/net-key', netKey.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/net-key', netKey.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/net-key', { outlets: { popup: netKey.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

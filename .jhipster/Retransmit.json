@@ -1,0 +1,32 @@
+{
+    "name": "Retransmit",
+    "fields": [
+        {
+            "fieldName": "count",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "interval",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "publish",
+            "otherEntityRelationshipName": "retransmit",
+            "relationshipName": "publish",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191104224050",
+    "entityTableName": "retransmit",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,28 @@
+{
+  "provisionercloudApp": {
+    "facility": {
+      "home": {
+        "title": "Facilities",
+        "createLabel": "Genera un nuovo Facility",
+        "createOrEditLabel": "Genera o modifica un Facility",
+        "notFound": "No Facilities found"
+      },
+      "created": "&Egrave; stato generato un nuovo Facility con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Facility identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Facility con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Facility {{ id }}?"
+      },
+      "detail": {
+        "title": "Facility"
+      },
+      "name": "Name",
+      "streetAddress": "Street Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "country": "Country",
+      "customer": "Customer",
+      "network": "Network"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="role">
+            <h2><span jhiTranslate="provisionercloudApp.role.detail.title">Role</span> {{role.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.role.name">Name</span></dt>
+                <dd>
+                    <span>{{role.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.role.description">Description</span></dt>
+                <dd>
+                    <span>{{role.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.role.appUser">App User</span></dt>
+                <dd>
+                    <div *ngIf="role.appUser">
+                        <a [routerLink]="['/app-user', role.appUser?.id, 'view']">{{role.appUser?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/role', role.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

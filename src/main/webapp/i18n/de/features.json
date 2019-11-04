@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "features": {
+      "home": {
+        "title": "Features",
+        "createLabel": "Features erstellen",
+        "createOrEditLabel": "Features erstellen oder bearbeiten",
+        "notFound": "No Features found"
+      },
+      "created": "Features erstellt mit ID {{ param }}",
+      "updated": "Features aktualisiert mit ID {{ param }}",
+      "deleted": "Features gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Features {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Features"
+      },
+      "proxy": "Proxy",
+      "friend": "Friend",
+      "relay": "Relay",
+      "lowPower": "Low Power",
+      "node": "Node"
+    }
+  }
+}

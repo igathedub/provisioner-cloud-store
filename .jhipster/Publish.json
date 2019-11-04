@@ -1,0 +1,52 @@
+{
+    "name": "Publish",
+    "fields": [
+        {
+            "fieldName": "index",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "credentials",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ttl",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "period",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "retransmit",
+            "otherEntityRelationshipName": "publish",
+            "relationshipName": "retransmit",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "model",
+            "otherEntityRelationshipName": "publish",
+            "relationshipName": "model",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191104224051",
+    "entityTableName": "publish",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

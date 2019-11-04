@@ -1,0 +1,37 @@
+{
+    "name": "Customer",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "facility",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "facility"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "appUser",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "user"
+        }
+    ],
+    "changelogDate": "20191104224041",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

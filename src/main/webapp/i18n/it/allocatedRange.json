@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "allocatedRange": {
+      "home": {
+        "title": "AllocatedRanges",
+        "createLabel": "Genera un nuovo Allocated Range",
+        "createOrEditLabel": "Genera o modifica un Allocated Range",
+        "notFound": "No Allocated Ranges found"
+      },
+      "created": "&Egrave; stato generato un nuovo Allocated Range con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Allocated Range identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Allocated Range con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Allocated Range {{ id }}?"
+      },
+      "detail": {
+        "title": "Allocated Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner",
+      "provisioner": "Provisioner",
+      "provisioner": "Provisioner"
+    }
+  }
+}

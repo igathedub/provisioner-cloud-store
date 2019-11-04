@@ -1,0 +1,28 @@
+{
+  "provisionercloudApp": {
+    "publish": {
+      "home": {
+        "title": "Publishes",
+        "createLabel": "Create a new Publish",
+        "createOrEditLabel": "Create or edit a Publish",
+        "notFound": "No Publishes found"
+      },
+      "created": "A new Publish is created with identifier {{ param }}",
+      "updated": "A Publish is updated with identifier {{ param }}",
+      "deleted": "A Publish is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Publish {{ id }}?"
+      },
+      "detail": {
+        "title": "Publish"
+      },
+      "index": "Index",
+      "credentials": "Credentials",
+      "ttl": "Ttl",
+      "period": "Period",
+      "address": "Address",
+      "retransmit": "Retransmit",
+      "model": "Model"
+    }
+  }
+}

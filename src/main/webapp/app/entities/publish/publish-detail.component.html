@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="publish">
+            <h2><span jhiTranslate="provisionercloudApp.publish.detail.title">Publish</span> {{publish.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.publish.index">Index</span></dt>
+                <dd>
+                    <span>{{publish.index}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.publish.credentials">Credentials</span></dt>
+                <dd>
+                    <span>{{publish.credentials}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.publish.ttl">Ttl</span></dt>
+                <dd>
+                    <span>{{publish.ttl}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.publish.period">Period</span></dt>
+                <dd>
+                    <span>{{publish.period}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.publish.address">Address</span></dt>
+                <dd>
+                    <span>{{publish.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.publish.retransmit">Retransmit</span></dt>
+                <dd>
+                    <div *ngIf="publish.retransmit">
+                        <a [routerLink]="['/retransmit', publish.retransmit?.id, 'view']">{{publish.retransmit?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/publish', publish.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

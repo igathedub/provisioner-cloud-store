@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "allocatedRange": {
+      "home": {
+        "title": "Allocated Ranges",
+        "createLabel": "Create a new Allocated Range",
+        "createOrEditLabel": "Create or edit a Allocated Range",
+        "notFound": "No Allocated Ranges found"
+      },
+      "created": "A new Allocated Range is created with identifier {{ param }}",
+      "updated": "A Allocated Range is updated with identifier {{ param }}",
+      "deleted": "A Allocated Range is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Allocated Range {{ id }}?"
+      },
+      "detail": {
+        "title": "Allocated Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner",
+      "provisioner": "Provisioner",
+      "provisioner": "Provisioner"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "provisionercloudApp": {
+    "keyIndex": {
+      "home": {
+        "title": "Key Indices",
+        "createLabel": "Key Index erstellen",
+        "createOrEditLabel": "Key Index erstellen oder bearbeiten",
+        "notFound": "No Key Indices found"
+      },
+      "created": "Key Index erstellt mit ID {{ param }}",
+      "updated": "Key Index aktualisiert mit ID {{ param }}",
+      "deleted": "Key Index gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Key Index {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Key Index"
+      },
+      "index": "Index",
+      "updated": "Updated",
+      "node": "Node",
+      "node": "Node"
+    }
+  }
+}

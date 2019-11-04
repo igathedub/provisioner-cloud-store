@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "features": {
+      "home": {
+        "title": "Features",
+        "createLabel": "Genera un nuovo Features",
+        "createOrEditLabel": "Genera o modifica un Features",
+        "notFound": "No Features found"
+      },
+      "created": "&Egrave; stato generato un nuovo Features con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Features identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Features con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Features {{ id }}?"
+      },
+      "detail": {
+        "title": "Features"
+      },
+      "proxy": "Proxy",
+      "friend": "Friend",
+      "relay": "Relay",
+      "lowPower": "Low Power",
+      "node": "Node"
+    }
+  }
+}

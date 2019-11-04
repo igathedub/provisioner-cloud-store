@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.appKey.home.title">App Keys</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-app-key" [routerLink]="['/app-key/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.appKey.home.createLabel">
+            Create a new App Key
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="appKeys?.length === 0">
+        <span jhiTranslate="provisionercloudApp.appKey.home.notFound">No appKeys found</span>
+    </div>
+    <div class="table-responsive" *ngIf="appKeys?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="key"><span jhiTranslate="provisionercloudApp.appKey.key">Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="provisionercloudApp.appKey.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="boundNetKey"><span jhiTranslate="provisionercloudApp.appKey.boundNetKey">Bound Net Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="index"><span jhiTranslate="provisionercloudApp.appKey.index">Index</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="networkConfiguration.id"><span jhiTranslate="provisionercloudApp.appKey.networkConfiguration">Network Configuration</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let appKey of appKeys ;trackBy: trackId">
+                <td><a [routerLink]="['/app-key', appKey.id, 'view' ]">{{appKey.id}}</a></td>
+                <td>{{appKey.key}}</td>
+                <td>{{appKey.name}}</td>
+                <td>{{appKey.boundNetKey}}</td>
+                <td>{{appKey.index}}</td>
+                <td>
+                    <div *ngIf="appKey.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', appKey.networkConfiguration?.id, 'view' ]" >{{appKey.networkConfiguration?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/app-key', appKey.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/app-key', appKey.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/app-key', { outlets: { popup: appKey.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

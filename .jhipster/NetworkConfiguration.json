@@ -1,0 +1,65 @@
+{
+    "name": "NetworkConfiguration",
+    "fields": [
+        {
+            "fieldName": "meshUUID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "meshName",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "facility",
+            "otherEntityName": "facility",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "provisioner",
+            "otherEntityRelationshipName": "networkConfiguration",
+            "relationshipName": "provisioner"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "node",
+            "otherEntityRelationshipName": "networkConfiguration",
+            "relationshipName": "node"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "meshGroup",
+            "otherEntityRelationshipName": "networkConfiguration",
+            "relationshipName": "group"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "netKey",
+            "otherEntityRelationshipName": "networkConfiguration",
+            "relationshipName": "netKey"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "appKey",
+            "otherEntityRelationshipName": "networkConfiguration",
+            "relationshipName": "appKey"
+        }
+    ],
+    "changelogDate": "20191104224057",
+    "entityTableName": "network_configuration",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "retransmit": {
+      "home": {
+        "title": "Retransmits",
+        "createLabel": "Retransmit erstellen",
+        "createOrEditLabel": "Retransmit erstellen oder bearbeiten",
+        "notFound": "No Retransmits found"
+      },
+      "created": "Retransmit erstellt mit ID {{ param }}",
+      "updated": "Retransmit aktualisiert mit ID {{ param }}",
+      "deleted": "Retransmit gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Retransmit {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Retransmit"
+      },
+      "count": "Count",
+      "interval": "Interval",
+      "publish": "Publish"
+    }
+  }
+}

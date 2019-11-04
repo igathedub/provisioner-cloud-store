@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-provisioner-heading" jhiTranslate="provisionercloudApp.provisioner.home.createOrEditLabel">Create or edit a Provisioner</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.provisioner.uUID" for="field_uUID">U UID</label>
+                    <input type="text" class="form-control" name="uUID" id="field_uUID"
+                           formControlName="uUID"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.provisioner.provisionerName" for="field_provisionerName">Provisioner Name</label>
+                    <input type="text" class="form-control" name="provisionerName" id="field_provisionerName"
+                           formControlName="provisionerName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.provisioner.networkConfiguration" for="field_networkConfiguration">Network Configuration</label>
+                    <select class="form-control" id="field_networkConfiguration" name="networkConfiguration" formControlName="networkConfiguration">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="networkConfigurationOption.id === editForm.get('networkConfiguration').value?.id ? editForm.get('networkConfiguration').value : networkConfigurationOption" *ngFor="let networkConfigurationOption of networkconfigurations; trackBy: trackNetworkConfigurationById">{{networkConfigurationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
