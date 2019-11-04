@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-features-heading" jhiTranslate="provisionercloudApp.features.home.createOrEditLabel">Create or edit a Features</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.features.proxy" for="field_proxy">Proxy</label>
+                    <input type="number" class="form-control" name="proxy" id="field_proxy"
+                           formControlName="proxy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.features.friend" for="field_friend">Friend</label>
+                    <input type="number" class="form-control" name="friend" id="field_friend"
+                           formControlName="friend"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.features.relay" for="field_relay">Relay</label>
+                    <input type="number" class="form-control" name="relay" id="field_relay"
+                           formControlName="relay"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.features.lowPower" for="field_lowPower">Low Power</label>
+                    <input type="number" class="form-control" name="lowPower" id="field_lowPower"
+                           formControlName="lowPower"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

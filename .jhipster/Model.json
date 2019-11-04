@@ -1,0 +1,43 @@
+{
+    "name": "Model",
+    "fields": [
+        {
+            "fieldName": "modelId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subscribe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bind",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "publish",
+            "otherEntityRelationshipName": "model",
+            "relationshipName": "publish",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "element",
+            "otherEntityName": "element",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224052",
+    "entityTableName": "model",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

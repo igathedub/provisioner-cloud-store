@@ -1,0 +1,30 @@
+{
+  "provisionercloudApp": {
+    "networkConfiguration": {
+      "home": {
+        "title": "NetworkConfigurations",
+        "createLabel": "Genera un nuovo Network Configuration",
+        "createOrEditLabel": "Genera o modifica un Network Configuration",
+        "notFound": "No Network Configurations found"
+      },
+      "created": "&Egrave; stato generato un nuovo Network Configuration con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Network Configuration identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Network Configuration con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Network Configuration {{ id }}?"
+      },
+      "detail": {
+        "title": "Network Configuration"
+      },
+      "meshUUID": "Mesh UUID",
+      "timestamp": "Timestamp",
+      "meshName": "Mesh Name",
+      "facility": "Facility",
+      "provisioner": "Provisioner",
+      "node": "Node",
+      "group": "Group",
+      "netKey": "Net Key",
+      "appKey": "App Key"
+    }
+  }
+}

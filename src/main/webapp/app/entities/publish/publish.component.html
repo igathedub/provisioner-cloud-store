@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.publish.home.title">Publishes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-publish" [routerLink]="['/publish/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.publish.home.createLabel">
+            Create a new Publish
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="publishes?.length === 0">
+        <span jhiTranslate="provisionercloudApp.publish.home.notFound">No publishes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="publishes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="index"><span jhiTranslate="provisionercloudApp.publish.index">Index</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="credentials"><span jhiTranslate="provisionercloudApp.publish.credentials">Credentials</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ttl"><span jhiTranslate="provisionercloudApp.publish.ttl">Ttl</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="period"><span jhiTranslate="provisionercloudApp.publish.period">Period</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="address"><span jhiTranslate="provisionercloudApp.publish.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="retransmit.id"><span jhiTranslate="provisionercloudApp.publish.retransmit">Retransmit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let publish of publishes ;trackBy: trackId">
+                <td><a [routerLink]="['/publish', publish.id, 'view' ]">{{publish.id}}</a></td>
+                <td>{{publish.index}}</td>
+                <td>{{publish.credentials}}</td>
+                <td>{{publish.ttl}}</td>
+                <td>{{publish.period}}</td>
+                <td>{{publish.address}}</td>
+                <td>
+                    <div *ngIf="publish.retransmit">
+                        <a [routerLink]="['/retransmit', publish.retransmit?.id, 'view' ]" >{{publish.retransmit?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/publish', publish.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/publish', publish.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/publish', { outlets: { popup: publish.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "provisionercloudApp": {
+    "node": {
+      "home": {
+        "title": "Nodes",
+        "createLabel": "Create a new Node",
+        "createOrEditLabel": "Create or edit a Node",
+        "notFound": "No Nodes found"
+      },
+      "created": "A new Node is created with identifier {{ param }}",
+      "updated": "A Node is updated with identifier {{ param }}",
+      "deleted": "A Node is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Node {{ id }}?"
+      },
+      "detail": {
+        "title": "Node"
+      },
+      "unicastAddress": "Unicast Address",
+      "configComplete": "Config Complete",
+      "defaultTTL": "Default TTL",
+      "cid": "Cid",
+      "blacklisted": "Blacklisted",
+      "uUID": "U UID",
+      "security": "Security",
+      "crpl": "Crpl",
+      "name": "Name",
+      "deviceKey": "Device Key",
+      "vid": "Vid",
+      "pid": "Pid",
+      "features": "Features",
+      "element": "Element",
+      "netKey": "Net Key",
+      "appKey": "App Key",
+      "networkConfiguration": "Network Configuration"
+    }
+  }
+}

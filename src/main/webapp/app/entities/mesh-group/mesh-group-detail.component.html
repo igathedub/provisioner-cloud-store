@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="meshGroup">
+            <h2><span jhiTranslate="provisionercloudApp.meshGroup.detail.title">Mesh Group</span> {{meshGroup.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.meshGroup.name">Name</span></dt>
+                <dd>
+                    <span>{{meshGroup.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.meshGroup.address">Address</span></dt>
+                <dd>
+                    <span>{{meshGroup.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.meshGroup.parentAddress">Parent Address</span></dt>
+                <dd>
+                    <span>{{meshGroup.parentAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.meshGroup.networkConfiguration">Network Configuration</span></dt>
+                <dd>
+                    <div *ngIf="meshGroup.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', meshGroup.networkConfiguration?.id, 'view']">{{meshGroup.networkConfiguration?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mesh-group', meshGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

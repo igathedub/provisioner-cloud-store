@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.facility.home.title">Facilities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-facility" [routerLink]="['/facility/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.facility.home.createLabel">
+            Create a new Facility
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="facilities?.length === 0">
+        <span jhiTranslate="provisionercloudApp.facility.home.notFound">No facilities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="facilities?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="provisionercloudApp.facility.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="streetAddress"><span jhiTranslate="provisionercloudApp.facility.streetAddress">Street Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="postalCode"><span jhiTranslate="provisionercloudApp.facility.postalCode">Postal Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="city"><span jhiTranslate="provisionercloudApp.facility.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="country"><span jhiTranslate="provisionercloudApp.facility.country">Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customer.id"><span jhiTranslate="provisionercloudApp.facility.customer">Customer</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let facility of facilities ;trackBy: trackId">
+                <td><a [routerLink]="['/facility', facility.id, 'view' ]">{{facility.id}}</a></td>
+                <td>{{facility.name}}</td>
+                <td>{{facility.streetAddress}}</td>
+                <td>{{facility.postalCode}}</td>
+                <td>{{facility.city}}</td>
+                <td>{{facility.country}}</td>
+                <td>
+                    <div *ngIf="facility.customer">
+                        <a [routerLink]="['/customer', facility.customer?.id, 'view' ]" >{{facility.customer?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/facility', facility.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/facility', facility.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/facility', { outlets: { popup: facility.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

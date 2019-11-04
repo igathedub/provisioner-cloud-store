@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="networkConfiguration">
+            <h2><span jhiTranslate="provisionercloudApp.networkConfiguration.detail.title">Network Configuration</span> {{networkConfiguration.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.networkConfiguration.meshUUID">Mesh UUID</span></dt>
+                <dd>
+                    <span>{{networkConfiguration.meshUUID}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.networkConfiguration.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{networkConfiguration.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.networkConfiguration.meshName">Mesh Name</span></dt>
+                <dd>
+                    <span>{{networkConfiguration.meshName}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.networkConfiguration.facility">Facility</span></dt>
+                <dd>
+                    <div *ngIf="networkConfiguration.facility">
+                        <a [routerLink]="['/facility', networkConfiguration.facility?.id, 'view']">{{networkConfiguration.facility?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/network-configuration', networkConfiguration.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

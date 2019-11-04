@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facility">
+            <h2><span jhiTranslate="provisionercloudApp.facility.detail.title">Facility</span> {{facility.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.facility.name">Name</span></dt>
+                <dd>
+                    <span>{{facility.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.facility.streetAddress">Street Address</span></dt>
+                <dd>
+                    <span>{{facility.streetAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.facility.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{facility.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.facility.city">City</span></dt>
+                <dd>
+                    <span>{{facility.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.facility.country">Country</span></dt>
+                <dd>
+                    <span>{{facility.country}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.facility.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="facility.customer">
+                        <a [routerLink]="['/customer', facility.customer?.id, 'view']">{{facility.customer?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facility', facility.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

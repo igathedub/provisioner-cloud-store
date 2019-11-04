@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-node-heading" jhiTranslate="provisionercloudApp.node.home.createOrEditLabel">Create or edit a Node</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.unicastAddress" for="field_unicastAddress">Unicast Address</label>
+                    <input type="text" class="form-control" name="unicastAddress" id="field_unicastAddress"
+                           formControlName="unicastAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.configComplete" for="field_configComplete">Config Complete</label>
+                    <input type="checkbox" class="form-control" name="configComplete" id="field_configComplete"
+                           formControlName="configComplete"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.defaultTTL" for="field_defaultTTL">Default TTL</label>
+                    <input type="number" class="form-control" name="defaultTTL" id="field_defaultTTL"
+                           formControlName="defaultTTL"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.cid" for="field_cid">Cid</label>
+                    <input type="text" class="form-control" name="cid" id="field_cid"
+                           formControlName="cid"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.blacklisted" for="field_blacklisted">Blacklisted</label>
+                    <input type="checkbox" class="form-control" name="blacklisted" id="field_blacklisted"
+                           formControlName="blacklisted"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.uUID" for="field_uUID">U UID</label>
+                    <input type="text" class="form-control" name="uUID" id="field_uUID"
+                           formControlName="uUID"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.security" for="field_security">Security</label>
+                    <input type="text" class="form-control" name="security" id="field_security"
+                           formControlName="security"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.crpl" for="field_crpl">Crpl</label>
+                    <input type="text" class="form-control" name="crpl" id="field_crpl"
+                           formControlName="crpl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.deviceKey" for="field_deviceKey">Device Key</label>
+                    <input type="text" class="form-control" name="deviceKey" id="field_deviceKey"
+                           formControlName="deviceKey"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.vid" for="field_vid">Vid</label>
+                    <input type="text" class="form-control" name="vid" id="field_vid"
+                           formControlName="vid"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.pid" for="field_pid">Pid</label>
+                    <input type="text" class="form-control" name="pid" id="field_pid"
+                           formControlName="pid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.features" for="field_features">Features</label>
+                    <select class="form-control" id="field_features" name="features" formControlName="features">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="featuresOption.id === editForm.get('features').value?.id ? editForm.get('features').value : featuresOption" *ngFor="let featuresOption of features; trackBy: trackFeaturesById">{{featuresOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="provisionercloudApp.node.networkConfiguration" for="field_networkConfiguration">Network Configuration</label>
+                    <select class="form-control" id="field_networkConfiguration" name="networkConfiguration" formControlName="networkConfiguration">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="networkConfigurationOption.id === editForm.get('networkConfiguration').value?.id ? editForm.get('networkConfiguration').value : networkConfigurationOption" *ngFor="let networkConfigurationOption of networkconfigurations; trackBy: trackNetworkConfigurationById">{{networkConfigurationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

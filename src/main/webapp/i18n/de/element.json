@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "element": {
+      "home": {
+        "title": "Elements",
+        "createLabel": "Element erstellen",
+        "createOrEditLabel": "Element erstellen oder bearbeiten",
+        "notFound": "No Elements found"
+      },
+      "created": "Element erstellt mit ID {{ param }}",
+      "updated": "Element aktualisiert mit ID {{ param }}",
+      "deleted": "Element gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Element {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Element"
+      },
+      "index": "Index",
+      "location": "Location",
+      "name": "Name",
+      "model": "Model",
+      "node": "Node"
+    }
+  }
+}

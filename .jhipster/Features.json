@@ -1,0 +1,40 @@
+{
+    "name": "Features",
+    "fields": [
+        {
+            "fieldName": "proxy",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "friend",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "relay",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lowPower",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "node",
+            "otherEntityRelationshipName": "features",
+            "relationshipName": "node",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191104224049",
+    "entityTableName": "features",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

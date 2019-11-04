@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="provisioner">
+            <h2><span jhiTranslate="provisionercloudApp.provisioner.detail.title">Provisioner</span> {{provisioner.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.provisioner.uUID">U UID</span></dt>
+                <dd>
+                    <span>{{provisioner.uUID}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.provisioner.provisionerName">Provisioner Name</span></dt>
+                <dd>
+                    <span>{{provisioner.provisionerName}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.provisioner.networkConfiguration">Network Configuration</span></dt>
+                <dd>
+                    <div *ngIf="provisioner.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', provisioner.networkConfiguration?.id, 'view']">{{provisioner.networkConfiguration?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/provisioner', provisioner.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

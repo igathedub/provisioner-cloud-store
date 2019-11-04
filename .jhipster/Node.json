@@ -1,0 +1,97 @@
+{
+    "name": "Node",
+    "fields": [
+        {
+            "fieldName": "unicastAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "configComplete",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "defaultTTL",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "blacklisted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "uUID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "security",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "crpl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deviceKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pid",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "features",
+            "otherEntityRelationshipName": "node",
+            "relationshipName": "features",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "element",
+            "otherEntityRelationshipName": "node",
+            "relationshipName": "element"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "keyIndex",
+            "otherEntityRelationshipName": "node",
+            "relationshipName": "netKey"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "keyIndex",
+            "otherEntityRelationshipName": "node",
+            "relationshipName": "appKey"
+        },
+        {
+            "relationshipName": "networkConfiguration",
+            "otherEntityName": "networkConfiguration",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224055",
+    "entityTableName": "node",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

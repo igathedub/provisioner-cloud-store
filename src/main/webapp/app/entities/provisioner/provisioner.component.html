@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.provisioner.home.title">Provisioners</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-provisioner" [routerLink]="['/provisioner/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.provisioner.home.createLabel">
+            Create a new Provisioner
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="provisioners?.length === 0">
+        <span jhiTranslate="provisionercloudApp.provisioner.home.notFound">No provisioners found</span>
+    </div>
+    <div class="table-responsive" *ngIf="provisioners?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="uUID"><span jhiTranslate="provisionercloudApp.provisioner.uUID">U UID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="provisionerName"><span jhiTranslate="provisionercloudApp.provisioner.provisionerName">Provisioner Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="networkConfiguration.id"><span jhiTranslate="provisionercloudApp.provisioner.networkConfiguration">Network Configuration</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let provisioner of provisioners ;trackBy: trackId">
+                <td><a [routerLink]="['/provisioner', provisioner.id, 'view' ]">{{provisioner.id}}</a></td>
+                <td>{{provisioner.uUID}}</td>
+                <td>{{provisioner.provisionerName}}</td>
+                <td>
+                    <div *ngIf="provisioner.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', provisioner.networkConfiguration?.id, 'view' ]" >{{provisioner.networkConfiguration?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/provisioner', provisioner.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/provisioner', provisioner.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/provisioner', { outlets: { popup: provisioner.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

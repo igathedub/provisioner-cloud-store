@@ -1,0 +1,25 @@
+{
+  "provisionercloudApp": {
+    "meshGroup": {
+      "home": {
+        "title": "MeshGroups",
+        "createLabel": "Genera un nuovo Mesh Group",
+        "createOrEditLabel": "Genera o modifica un Mesh Group",
+        "notFound": "No Mesh Groups found"
+      },
+      "created": "&Egrave; stato generato un nuovo Mesh Group con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Mesh Group identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Mesh Group con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Mesh Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Mesh Group"
+      },
+      "name": "Name",
+      "address": "Address",
+      "parentAddress": "Parent Address",
+      "networkConfiguration": "Network Configuration"
+    }
+  }
+}

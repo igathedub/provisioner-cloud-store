@@ -1,0 +1,47 @@
+{
+    "name": "NetKey",
+    "fields": [
+        {
+            "fieldName": "phase",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "minSecurity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "key",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "index",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "networkConfiguration",
+            "otherEntityName": "networkConfiguration",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224047",
+    "entityTableName": "net_key",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

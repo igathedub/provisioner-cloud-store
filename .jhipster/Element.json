@@ -1,0 +1,41 @@
+{
+    "name": "Element",
+    "fields": [
+        {
+            "fieldName": "index",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "model",
+            "otherEntityRelationshipName": "element",
+            "relationshipName": "model"
+        },
+        {
+            "relationshipName": "node",
+            "otherEntityName": "node",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224053",
+    "entityTableName": "element",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

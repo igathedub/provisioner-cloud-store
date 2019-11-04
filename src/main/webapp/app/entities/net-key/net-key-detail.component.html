@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="netKey">
+            <h2><span jhiTranslate="provisionercloudApp.netKey.detail.title">Net Key</span> {{netKey.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.netKey.phase">Phase</span></dt>
+                <dd>
+                    <span>{{netKey.phase}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.minSecurity">Min Security</span></dt>
+                <dd>
+                    <span>{{netKey.minSecurity}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.key">Key</span></dt>
+                <dd>
+                    <span>{{netKey.key}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{netKey.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.name">Name</span></dt>
+                <dd>
+                    <span>{{netKey.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.index">Index</span></dt>
+                <dd>
+                    <span>{{netKey.index}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKey.networkConfiguration">Network Configuration</span></dt>
+                <dd>
+                    <div *ngIf="netKey.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', netKey.networkConfiguration?.id, 'view']">{{netKey.networkConfiguration?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/net-key', netKey.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

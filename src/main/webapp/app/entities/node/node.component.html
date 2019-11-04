@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.node.home.title">Nodes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-node" [routerLink]="['/node/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.node.home.createLabel">
+            Create a new Node
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="nodes?.length === 0">
+        <span jhiTranslate="provisionercloudApp.node.home.notFound">No nodes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="nodes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="unicastAddress"><span jhiTranslate="provisionercloudApp.node.unicastAddress">Unicast Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="configComplete"><span jhiTranslate="provisionercloudApp.node.configComplete">Config Complete</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="defaultTTL"><span jhiTranslate="provisionercloudApp.node.defaultTTL">Default TTL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cid"><span jhiTranslate="provisionercloudApp.node.cid">Cid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="blacklisted"><span jhiTranslate="provisionercloudApp.node.blacklisted">Blacklisted</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="uUID"><span jhiTranslate="provisionercloudApp.node.uUID">U UID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="security"><span jhiTranslate="provisionercloudApp.node.security">Security</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="crpl"><span jhiTranslate="provisionercloudApp.node.crpl">Crpl</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="provisionercloudApp.node.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="deviceKey"><span jhiTranslate="provisionercloudApp.node.deviceKey">Device Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="vid"><span jhiTranslate="provisionercloudApp.node.vid">Vid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="pid"><span jhiTranslate="provisionercloudApp.node.pid">Pid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="features.id"><span jhiTranslate="provisionercloudApp.node.features">Features</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="networkConfiguration.id"><span jhiTranslate="provisionercloudApp.node.networkConfiguration">Network Configuration</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let node of nodes ;trackBy: trackId">
+                <td><a [routerLink]="['/node', node.id, 'view' ]">{{node.id}}</a></td>
+                <td>{{node.unicastAddress}}</td>
+                <td>{{node.configComplete}}</td>
+                <td>{{node.defaultTTL}}</td>
+                <td>{{node.cid}}</td>
+                <td>{{node.blacklisted}}</td>
+                <td>{{node.uUID}}</td>
+                <td>{{node.security}}</td>
+                <td>{{node.crpl}}</td>
+                <td>{{node.name}}</td>
+                <td>{{node.deviceKey}}</td>
+                <td>{{node.vid}}</td>
+                <td>{{node.pid}}</td>
+                <td>
+                    <div *ngIf="node.features">
+                        <a [routerLink]="['/features', node.features?.id, 'view' ]" >{{node.features?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="node.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', node.networkConfiguration?.id, 'view' ]" >{{node.networkConfiguration?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/node', node.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/node', node.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/node', { outlets: { popup: node.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "provisionercloudApp": {
+    "provisioner": {
+      "home": {
+        "title": "Provisioners",
+        "createLabel": "Create a new Provisioner",
+        "createOrEditLabel": "Create or edit a Provisioner",
+        "notFound": "No Provisioners found"
+      },
+      "created": "A new Provisioner is created with identifier {{ param }}",
+      "updated": "A Provisioner is updated with identifier {{ param }}",
+      "deleted": "A Provisioner is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Provisioner {{ id }}?"
+      },
+      "detail": {
+        "title": "Provisioner"
+      },
+      "uUID": "U UID",
+      "provisionerName": "Provisioner Name",
+      "aallocatedGroupRange": "Aallocated Group Range",
+      "aallocatedUnicastRange": "Aallocated Unicast Range",
+      "aallocatedSceneRange": "Aallocated Scene Range",
+      "networkConfiguration": "Network Configuration"
+    }
+  }
+}

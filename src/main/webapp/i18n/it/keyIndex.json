@@ -1,0 +1,25 @@
+{
+  "provisionercloudApp": {
+    "keyIndex": {
+      "home": {
+        "title": "KeyIndices",
+        "createLabel": "Genera un nuovo Key Index",
+        "createOrEditLabel": "Genera o modifica un Key Index",
+        "notFound": "No Key Indices found"
+      },
+      "created": "&Egrave; stato generato un nuovo Key Index con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Key Index identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Key Index con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Key Index {{ id }}?"
+      },
+      "detail": {
+        "title": "Key Index"
+      },
+      "index": "Index",
+      "updated": "Updated",
+      "node": "Node",
+      "node": "Node"
+    }
+  }
+}

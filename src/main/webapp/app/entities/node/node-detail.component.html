@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="node">
+            <h2><span jhiTranslate="provisionercloudApp.node.detail.title">Node</span> {{node.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.node.unicastAddress">Unicast Address</span></dt>
+                <dd>
+                    <span>{{node.unicastAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.configComplete">Config Complete</span></dt>
+                <dd>
+                    <span>{{node.configComplete}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.defaultTTL">Default TTL</span></dt>
+                <dd>
+                    <span>{{node.defaultTTL}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.cid">Cid</span></dt>
+                <dd>
+                    <span>{{node.cid}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.blacklisted">Blacklisted</span></dt>
+                <dd>
+                    <span>{{node.blacklisted}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.uUID">U UID</span></dt>
+                <dd>
+                    <span>{{node.uUID}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.security">Security</span></dt>
+                <dd>
+                    <span>{{node.security}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.crpl">Crpl</span></dt>
+                <dd>
+                    <span>{{node.crpl}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.name">Name</span></dt>
+                <dd>
+                    <span>{{node.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.deviceKey">Device Key</span></dt>
+                <dd>
+                    <span>{{node.deviceKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.vid">Vid</span></dt>
+                <dd>
+                    <span>{{node.vid}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.pid">Pid</span></dt>
+                <dd>
+                    <span>{{node.pid}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.features">Features</span></dt>
+                <dd>
+                    <div *ngIf="node.features">
+                        <a [routerLink]="['/features', node.features?.id, 'view']">{{node.features?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.node.networkConfiguration">Network Configuration</span></dt>
+                <dd>
+                    <div *ngIf="node.networkConfiguration">
+                        <a [routerLink]="['/network-configuration', node.networkConfiguration?.id, 'view']">{{node.networkConfiguration?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/node', node.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

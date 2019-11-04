@@ -1,0 +1,26 @@
+{
+  "provisionercloudApp": {
+    "appKey": {
+      "home": {
+        "title": "App Keys",
+        "createLabel": "App Key erstellen",
+        "createOrEditLabel": "App Key erstellen oder bearbeiten",
+        "notFound": "No App Keys found"
+      },
+      "created": "App Key erstellt mit ID {{ param }}",
+      "updated": "App Key aktualisiert mit ID {{ param }}",
+      "deleted": "App Key gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll App Key {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "App Key"
+      },
+      "key": "Key",
+      "name": "Name",
+      "boundNetKey": "Bound Net Key",
+      "index": "Index",
+      "networkConfiguration": "Network Configuration"
+    }
+  }
+}

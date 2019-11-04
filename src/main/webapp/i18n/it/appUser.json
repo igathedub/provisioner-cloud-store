@@ -1,0 +1,27 @@
+{
+  "provisionercloudApp": {
+    "appUser": {
+      "home": {
+        "title": "AppUsers",
+        "createLabel": "Genera un nuovo App User",
+        "createOrEditLabel": "Genera o modifica un App User",
+        "notFound": "No App Users found"
+      },
+      "created": "&Egrave; stato generato un nuovo App User con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato App User identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato App User con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare App User {{ id }}?"
+      },
+      "detail": {
+        "title": "App User"
+      },
+      "name": "Name",
+      "password": "Password",
+      "email": "Email",
+      "domain": "Domain",
+      "customer": "Customer",
+      "role": "Role"
+    }
+  }
+}

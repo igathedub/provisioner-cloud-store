@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="provisionercloudApp.model.home.title">Models</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-model" [routerLink]="['/model/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="provisionercloudApp.model.home.createLabel">
+            Create a new Model
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="models?.length === 0">
+        <span jhiTranslate="provisionercloudApp.model.home.notFound">No models found</span>
+    </div>
+    <div class="table-responsive" *ngIf="models?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modelId"><span jhiTranslate="provisionercloudApp.model.modelId">Model Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="subscribe"><span jhiTranslate="provisionercloudApp.model.subscribe">Subscribe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="bind"><span jhiTranslate="provisionercloudApp.model.bind">Bind</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="publish.id"><span jhiTranslate="provisionercloudApp.model.publish">Publish</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="element.id"><span jhiTranslate="provisionercloudApp.model.element">Element</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let model of models ;trackBy: trackId">
+                <td><a [routerLink]="['/model', model.id, 'view' ]">{{model.id}}</a></td>
+                <td>{{model.modelId}}</td>
+                <td>{{model.subscribe}}</td>
+                <td>{{model.bind}}</td>
+                <td>
+                    <div *ngIf="model.publish">
+                        <a [routerLink]="['/publish', model.publish?.id, 'view' ]" >{{model.publish?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="model.element">
+                        <a [routerLink]="['/element', model.element?.id, 'view' ]" >{{model.element?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/model', model.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/model', model.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/model', { outlets: { popup: model.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

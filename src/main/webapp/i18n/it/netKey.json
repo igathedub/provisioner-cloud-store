@@ -1,0 +1,28 @@
+{
+  "provisionercloudApp": {
+    "netKey": {
+      "home": {
+        "title": "NetKeys",
+        "createLabel": "Genera un nuovo Net Key",
+        "createOrEditLabel": "Genera o modifica un Net Key",
+        "notFound": "No Net Keys found"
+      },
+      "created": "&Egrave; stato generato un nuovo Net Key con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Net Key identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Net Key con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Net Key {{ id }}?"
+      },
+      "detail": {
+        "title": "Net Key"
+      },
+      "phase": "Phase",
+      "minSecurity": "Min Security",
+      "key": "Key",
+      "timestamp": "Timestamp",
+      "name": "Name",
+      "index": "Index",
+      "networkConfiguration": "Network Configuration"
+    }
+  }
+}

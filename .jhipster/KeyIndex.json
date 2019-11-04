@@ -1,0 +1,37 @@
+{
+    "name": "KeyIndex",
+    "fields": [
+        {
+            "fieldName": "index",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "updated",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "node",
+            "otherEntityName": "node",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "node",
+            "otherEntityName": "node",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104224048",
+    "entityTableName": "key_index",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
