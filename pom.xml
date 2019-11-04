@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>skyy.blue</groupId>
-    <artifactId>provisionercloud</artifactId>
+    <artifactId>provisioner-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Provisionercloud</name>
+    <name>Provisioner Cloud</name>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -218,6 +218,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <scope>provided</scope>
@@ -338,8 +344,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>9</source>
+                    <target>9</target>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.springframework.boot</groupId>
@@ -361,6 +367,11 @@
                             <groupId>org.glassfish.jaxb</groupId>
                             <artifactId>jaxb-runtime</artifactId>
                             <version>${jaxb-runtime.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.10</version>
                         </path>
                         <!-- jhipster-needle-maven-add-annotation-processor -->
                     </annotationProcessorPaths>
@@ -576,7 +587,7 @@
                         <driver>org.h2.Driver</driver>
                         <url>jdbc:h2:file:${project.build.directory}/h2db/db/provisionercloud</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>provisionercloud</username>
+                        <username>ProvisionerCloud</username>
                         <password></password>
                         <referenceUrl>hibernate:spring:skyy.blue.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
@@ -1039,6 +1050,12 @@
                 <dependency>
                     <groupId>org.hibernate</groupId>
                     <artifactId>hibernate-jpamodelgen</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>1.18.10</version>
+                    <scope>provided</scope>
                 </dependency>
             </dependencies>
         </profile>
