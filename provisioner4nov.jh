@@ -126,9 +126,6 @@ relationship OneToMany {
     NetworkConfiguration{group} to MeshGroup,
     NetworkConfiguration{netKey} to NetKey,
     NetworkConfiguration{appKey} to AppKey,
-    Provisioner{aallocatedGroupRange} to AllocatedRange,
-    Provisioner{aallocatedUnicastRange} to AllocatedRange,
-    Provisioner{aallocatedSceneRange} to AllocatedRange,
     Node{element} to Element,
     Node{netKey} to KeyIndex,
     Node{appKey} to KeyIndex,
@@ -136,7 +133,10 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-	Node to Features,
+	Provisioner{allocatedGroupRange} to AllocatedRange,
+    Provisioner{allocatedUnicastRange} to AllocatedRange,
+    Provisioner{allocatedSceneRange} to AllocatedRange,
+    Node to Features,
     Model to Publish,
 	Publish to Retransmit
 }
