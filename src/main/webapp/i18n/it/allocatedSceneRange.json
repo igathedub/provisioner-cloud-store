@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "allocatedSceneRange": {
+      "home": {
+        "title": "AllocatedSceneRanges",
+        "createLabel": "Genera un nuovo Allocated Scene Range",
+        "createOrEditLabel": "Genera o modifica un Allocated Scene Range",
+        "notFound": "No Allocated Scene Ranges found"
+      },
+      "created": "&Egrave; stato generato un nuovo Allocated Scene Range con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Allocated Scene Range identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Allocated Scene Range con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Allocated Scene Range {{ id }}?"
+      },
+      "detail": {
+        "title": "Allocated Scene Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner"
+    }
+  }
+}

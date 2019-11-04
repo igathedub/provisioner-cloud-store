@@ -67,7 +67,7 @@
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "keyIndex",
+            "otherEntityName": "netKeyIndex",
             "otherEntityRelationshipName": "node",
             "relationshipName": "netKey"
         },

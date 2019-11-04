@@ -50,6 +50,12 @@ entity KeyIndex {
     updated Boolean
 }
 
+entity NetKeyIndex {
+	index Integer,
+    updated Boolean
+}
+
+
 entity Features {
 	proxy Integer,
     friend Integer,
@@ -82,7 +88,17 @@ entity Element {
 	name String
 }
 
-entity AllocatedRange {
+entity AllocatedGroupRange {
+    lowAddress String,
+    highAddress String
+}
+
+entity AllocatedUnicastRange {
+    lowAddress String,
+    highAddress String
+}
+
+entity AllocatedSceneRange {
     lowAddress String,
     highAddress String
 }
@@ -126,17 +142,17 @@ relationship OneToMany {
     NetworkConfiguration{group} to MeshGroup,
     NetworkConfiguration{netKey} to NetKey,
     NetworkConfiguration{appKey} to AppKey,
-    Provisioner{aallocatedGroupRange} to AllocatedRange,
-    Provisioner{aallocatedUnicastRange} to AllocatedRange,
-    Provisioner{aallocatedSceneRange} to AllocatedRange,
+    Provisioner{aallocatedGroupRange} to AllocatedGroupRange,
+    Provisioner{aallocatedUnicastRange} to AllocatedUnicastRange,
+    Provisioner{aallocatedSceneRange} to AllocatedSceneRange,
     Node{element} to Element,
-    Node{netKey} to KeyIndex,
+    Node{netKey} to NetKeyIndex,
     Node{appKey} to KeyIndex,
     Element{model} to Model
 }
 
 relationship OneToOne {
-	Node to Features,
+    Node to Features,
     Model to Publish,
 	Publish to Retransmit
 }

@@ -16,12 +16,6 @@
             "otherEntityName": "node",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "node",
-            "otherEntityName": "node",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191104224048",

@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "allocatedSceneRange": {
+      "home": {
+        "title": "Allocated Scene Ranges",
+        "createLabel": "Allocated Scene Range erstellen",
+        "createOrEditLabel": "Allocated Scene Range erstellen oder bearbeiten",
+        "notFound": "No Allocated Scene Ranges found"
+      },
+      "created": "Allocated Scene Range erstellt mit ID {{ param }}",
+      "updated": "Allocated Scene Range aktualisiert mit ID {{ param }}",
+      "deleted": "Allocated Scene Range gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Allocated Scene Range {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Allocated Scene Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner"
+    }
+  }
+}

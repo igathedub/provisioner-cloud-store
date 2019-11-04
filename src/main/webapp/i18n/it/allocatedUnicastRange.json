@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "allocatedUnicastRange": {
+      "home": {
+        "title": "AllocatedUnicastRanges",
+        "createLabel": "Genera un nuovo Allocated Unicast Range",
+        "createOrEditLabel": "Genera o modifica un Allocated Unicast Range",
+        "notFound": "No Allocated Unicast Ranges found"
+      },
+      "created": "&Egrave; stato generato un nuovo Allocated Unicast Range con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Allocated Unicast Range identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Allocated Unicast Range con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Allocated Unicast Range {{ id }}?"
+      },
+      "detail": {
+        "title": "Allocated Unicast Range"
+      },
+      "lowAddress": "Low Address",
+      "highAddress": "High Address",
+      "provisioner": "Provisioner"
+    }
+  }
+}

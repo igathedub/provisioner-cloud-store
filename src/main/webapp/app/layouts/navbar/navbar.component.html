@@ -129,6 +129,30 @@
                             <span jhiTranslate="global.menu.entities.networkConfiguration">Network Configuration</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="net-key-index" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.netKeyIndex">Net Key Index</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="allocated-group-range" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.allocatedGroupRange">Allocated Group Range</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="allocated-unicast-range" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.allocatedUnicastRange">Allocated Unicast Range</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="allocated-scene-range" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.allocatedSceneRange">Allocated Scene Range</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

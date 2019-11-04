@@ -5,11 +5,10 @@ export interface IKeyIndex {
   index?: number;
   updated?: boolean;
   node?: INode;
-  node?: INode;
 }
 
 export class KeyIndex implements IKeyIndex {
-  constructor(public id?: number, public index?: number, public updated?: boolean, public node?: INode, public node?: INode) {
+  constructor(public id?: number, public index?: number, public updated?: boolean, public node?: INode) {
     this.updated = this.updated || false;
   }
 }

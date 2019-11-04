@@ -24,6 +24,10 @@
         "node": "Node",
         "provisioner": "Provisioner",
         "networkConfiguration": "Network Configuration",
+        "netKeyIndex": "Net Key Index",
+        "allocatedGroupRange": "Allocated Group Range",
+        "allocatedUnicastRange": "Allocated Unicast Range",
+        "allocatedSceneRange": "Allocated Scene Range",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

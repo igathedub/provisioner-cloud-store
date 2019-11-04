@@ -25,7 +25,6 @@ export class KeyIndexUpdateComponent implements OnInit {
     id: [],
     index: [],
     updated: [],
-    node: [],
     node: []
   });
 
@@ -56,7 +55,6 @@ export class KeyIndexUpdateComponent implements OnInit {
       id: keyIndex.id,
       index: keyIndex.index,
       updated: keyIndex.updated,
-      node: keyIndex.node,
       node: keyIndex.node
     });
   }
@@ -81,7 +79,6 @@ export class KeyIndexUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       index: this.editForm.get(['index']).value,
       updated: this.editForm.get(['updated']).value,
-      node: this.editForm.get(['node']).value,
       node: this.editForm.get(['node']).value
     };
   }

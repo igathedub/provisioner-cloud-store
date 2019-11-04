@@ -72,6 +72,25 @@ import { RouterModule } from '@angular/router';
         path: 'network-configuration',
         loadChildren: () =>
           import('./network-configuration/network-configuration.module').then(m => m.ProvisionercloudNetworkConfigurationModule)
+      },
+      {
+        path: 'net-key-index',
+        loadChildren: () => import('./net-key-index/net-key-index.module').then(m => m.ProvisionercloudNetKeyIndexModule)
+      },
+      {
+        path: 'allocated-group-range',
+        loadChildren: () =>
+          import('./allocated-group-range/allocated-group-range.module').then(m => m.ProvisionercloudAllocatedGroupRangeModule)
+      },
+      {
+        path: 'allocated-unicast-range',
+        loadChildren: () =>
+          import('./allocated-unicast-range/allocated-unicast-range.module').then(m => m.ProvisionercloudAllocatedUnicastRangeModule)
+      },
+      {
+        path: 'allocated-scene-range',
+        loadChildren: () =>
+          import('./allocated-scene-range/allocated-scene-range.module').then(m => m.ProvisionercloudAllocatedSceneRangeModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

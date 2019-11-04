@@ -1,0 +1,31 @@
+{
+    "name": "AllocatedGroupRange",
+    "fields": [
+        {
+            "fieldName": "lowAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "highAddress",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "provisioner",
+            "otherEntityName": "provisioner",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104234525",
+    "entityTableName": "allocated_group_range",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

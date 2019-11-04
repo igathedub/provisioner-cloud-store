@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "netKeyIndex": {
+      "home": {
+        "title": "Net Key Indices",
+        "createLabel": "Net Key Index erstellen",
+        "createOrEditLabel": "Net Key Index erstellen oder bearbeiten",
+        "notFound": "No Net Key Indices found"
+      },
+      "created": "Net Key Index erstellt mit ID {{ param }}",
+      "updated": "Net Key Index aktualisiert mit ID {{ param }}",
+      "deleted": "Net Key Index gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Net Key Index {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Net Key Index"
+      },
+      "index": "Index",
+      "updated": "Updated",
+      "node": "Node"
+    }
+  }
+}

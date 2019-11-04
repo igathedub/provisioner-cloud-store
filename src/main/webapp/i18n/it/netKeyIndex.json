@@ -1,0 +1,24 @@
+{
+  "provisionercloudApp": {
+    "netKeyIndex": {
+      "home": {
+        "title": "NetKeyIndices",
+        "createLabel": "Genera un nuovo Net Key Index",
+        "createOrEditLabel": "Genera o modifica un Net Key Index",
+        "notFound": "No Net Key Indices found"
+      },
+      "created": "&Egrave; stato generato un nuovo Net Key Index con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Net Key Index identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Net Key Index con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Net Key Index {{ id }}?"
+      },
+      "detail": {
+        "title": "Net Key Index"
+      },
+      "index": "Index",
+      "updated": "Updated",
+      "node": "Node"
+    }
+  }
+}

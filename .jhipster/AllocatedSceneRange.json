@@ -1,0 +1,31 @@
+{
+    "name": "AllocatedSceneRange",
+    "fields": [
+        {
+            "fieldName": "lowAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "highAddress",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "provisioner",
+            "otherEntityName": "provisioner",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191104234527",
+    "entityTableName": "allocated_scene_range",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

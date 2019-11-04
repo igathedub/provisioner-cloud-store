@@ -19,12 +19,6 @@
                         <a [routerLink]="['/node', keyIndex.node?.id, 'view']">{{keyIndex.node?.id}}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="provisionercloudApp.keyIndex.node">Node</span></dt>
-                <dd>
-                    <div *ngIf="keyIndex.node">
-                        <a [routerLink]="['/node', keyIndex.node?.id, 'view']">{{keyIndex.node?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

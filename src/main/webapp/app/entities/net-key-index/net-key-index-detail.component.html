@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="netKeyIndex">
+            <h2><span jhiTranslate="provisionercloudApp.netKeyIndex.detail.title">Net Key Index</span> {{netKeyIndex.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="provisionercloudApp.netKeyIndex.index">Index</span></dt>
+                <dd>
+                    <span>{{netKeyIndex.index}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKeyIndex.updated">Updated</span></dt>
+                <dd>
+                    <span>{{netKeyIndex.updated}}</span>
+                </dd>
+                <dt><span jhiTranslate="provisionercloudApp.netKeyIndex.node">Node</span></dt>
+                <dd>
+                    <div *ngIf="netKeyIndex.node">
+                        <a [routerLink]="['/node', netKeyIndex.node?.id, 'view']">{{netKeyIndex.node?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/net-key-index', netKeyIndex.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
