@@ -60,7 +60,6 @@ public class CacheConfiguration {
             createCache(cm, skyy.blue.domain.Model.class.getName());
             createCache(cm, skyy.blue.domain.Element.class.getName());
             createCache(cm, skyy.blue.domain.Element.class.getName() + ".models");
-            createCache(cm, skyy.blue.domain.AllocatedRange.class.getName());
             createCache(cm, skyy.blue.domain.Node.class.getName());
             createCache(cm, skyy.blue.domain.Node.class.getName() + ".elements");
             createCache(cm, skyy.blue.domain.Node.class.getName() + ".netKeys");

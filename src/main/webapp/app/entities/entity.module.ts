@@ -57,10 +57,6 @@ import { RouterModule } from '@angular/router';
         loadChildren: () => import('./element/element.module').then(m => m.ProvisionercloudElementModule)
       },
       {
-        path: 'allocated-range',
-        loadChildren: () => import('./allocated-range/allocated-range.module').then(m => m.ProvisionercloudAllocatedRangeModule)
-      },
-      {
         path: 'node',
         loadChildren: () => import('./node/node.module').then(m => m.ProvisionercloudNodeModule)
       },

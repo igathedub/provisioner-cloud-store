@@ -20,7 +20,6 @@
         "publish": "Publish",
         "model": "Model",
         "element": "Element",
-        "allocatedRange": "Allocated Range",
         "node": "Node",
         "provisioner": "Provisioner",
         "networkConfiguration": "Network Configuration",

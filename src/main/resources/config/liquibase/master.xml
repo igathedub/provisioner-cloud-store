@@ -27,7 +27,6 @@
     <include file="config/liquibase/changelog/20191104224051_added_entity_Publish.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224052_added_entity_Model.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224053_added_entity_Element.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191104224054_added_entity_AllocatedRange.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224055_added_entity_Node.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224056_added_entity_Provisioner.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224057_added_entity_NetworkConfiguration.xml" relativeToChangelogFile="false"/>
@@ -46,7 +45,6 @@
     <include file="config/liquibase/changelog/20191104224051_added_entity_constraints_Publish.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224052_added_entity_constraints_Model.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224053_added_entity_constraints_Element.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191104224054_added_entity_constraints_AllocatedRange.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224055_added_entity_constraints_Node.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224056_added_entity_constraints_Provisioner.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191104224057_added_entity_constraints_NetworkConfiguration.xml" relativeToChangelogFile="false"/>
